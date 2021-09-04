@@ -30,20 +30,22 @@ fun MainScreen(){
         color = Color.DarkGray,
         modifier = Modifier.fillMaxSize()) {
         Row() {
-            Surface(
-                color = Color.Magenta,
-                modifier = Modifier
-                    .height(600.dp)
-                    .width(60.dp)
-            ){ }
-            Surface(
-                color = Color.Red,
-                modifier = Modifier
-                    .height(600.dp)
-                    .width(60.dp)
-            ){ }
+            HorizontalColoredBar(color = Color.Yellow)
+            HorizontalColoredBar(color = Color.Red)
+            HorizontalColoredBar(color = Color.Blue)
+            HorizontalColoredBar(color = Color.Green)
         }
     }
+}
+
+@Composable
+fun HorizontalColoredBar(color: Color){
+    Surface(
+        color = color,
+        modifier = Modifier
+            .height(600.dp)
+            .width(60.dp)
+    ){ }
 }
 
 @Preview(showBackground = true)
