@@ -30,44 +30,32 @@ fun MainScreen() {
         color = Color.DarkGray,
         modifier = Modifier.fillMaxSize()
     ) {
-        /* Row(
-            modifier = Modifier.fillMaxSize(),
-            horizontalArrangement = Arrangement.SpaceBetween,
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            HorizontalColoredBar(color = Color.Yellow)
-            HorizontalColoredBar(color = Color.Blue)
-            HorizontalColoredBar(color = Color.White)
-            HorizontalColoredBar(color = Color.Magenta)
-            HorizontalColoredBar(color = Color.Green)
-        } */
-
         Column(
             modifier = Modifier.fillMaxSize(),
             verticalArrangement = Arrangement.SpaceEvenly,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            HorizontalColoredBar(color = Color.Yellow)
-            HorizontalColoredBar(color = Color.Blue)
-            HorizontalColoredBar(color = Color.White)
-            HorizontalColoredBar(color = Color.Magenta)
-            HorizontalColoredBar(color = Color.Green)
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceEvenly
+            ) {
+                ColoredSquare(color = Color.Yellow)
+                ColoredSquare(color = Color.Blue)
+            }
+            ColoredSquare(color = Color.White)
+            ColoredSquare(color = Color.Magenta)
+            ColoredSquare(color = Color.Green)
         }
     }
 }
 
 @Composable
-fun HorizontalColoredBar(color: Color) {
+fun ColoredSquare(color: Color) {
     Surface(
         color = color,
         modifier = Modifier
-            /* For Row
-            .height(600.dp)
-            .width(60.dp) */
-
-            /* For Column */
             .height(100.dp)
-            .width(350.dp)
+            .width(100.dp)
     ) { }
 }
 
